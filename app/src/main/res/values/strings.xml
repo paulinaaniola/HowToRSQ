@@ -3,4 +3,5 @@
     <string name="price">price</string>
     <string name="pizza_name">pizza name</string>
     <string name="ingredients">ingredients</string>
+    <string name="add">ADD</string>
 </resources>

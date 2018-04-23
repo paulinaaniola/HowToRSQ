@@ -8,21 +8,31 @@
     tools:context=".PizzaListActivity">
 
     <EditText
+        android:id="@+id/pizzaNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/pizza_name"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:hint="@string/pizza_name" />
 
     <EditText
+        android:id="@+id/priceEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/price"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:hint="@string/price" />
 
     <EditText
+        android:id="@+id/ingredientsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/ingredients"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:hint="@string/ingredients" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/add"/>
 
 </LinearLayout>
