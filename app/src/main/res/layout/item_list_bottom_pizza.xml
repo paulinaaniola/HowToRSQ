@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomWrapperLayout"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:background="@android:color/holo_red_dark">
+
+        <ImageView
+            android:id="@+id/pizzaBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:src="@drawable/delete" />
+
+    </FrameLayout>
+
+</FrameLayout>

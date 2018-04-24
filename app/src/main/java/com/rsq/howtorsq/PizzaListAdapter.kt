@@ -6,6 +6,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import com.daimajia.swipe.SwipeLayout
+import kotlinx.android.synthetic.main.item_list_bottom_pizza.view.*
+import kotlinx.android.synthetic.main.item_list_top_examination.view.*
 import kotlinx.android.synthetic.main.item_pizza.view.*
 
 class PizzaListAdapter : RecyclerView.Adapter<PizzaListAdapter.ViewHolder>() {
@@ -30,11 +34,60 @@ class PizzaListAdapter : RecyclerView.Adapter<PizzaListAdapter.ViewHolder>() {
             context?.startActivity(Intent(context, PizzaDetailsActivity::class.java)
                     .putExtra("pizza", pizza))
         })
+        setupSwipeDelete(holder.examItemSwipeLayout)
+        setupBottomViewClick(holder.bottomWrapperLayout, pizza)
+    }
+
+    private fun setupBottomViewClick(bottomWrapperLayout: FrameLayout?, pizza: Pizza) {
+        bottomWrapperLayout?.setOnClickListener({
+            deletePizzaFromList(pizza)
+        })
+    }
+
+    private fun deletePizzaFromList(pizza: Pizza) {
+        listOfPizza.remove(pizza)
+        notifyDataSetChanged()
+    }
+
+    private fun setupSwipeDelete(pizzaItemSwipeLayout: SwipeLayout) {
+        with(pizzaItemSwipeLayout) {
+            showMode = SwipeLayout.ShowMode.PullOut
+            addDrag(SwipeLayout.DragEdge.Left, bottomWrapperLayout)
+            addDrag(SwipeLayout.DragEdge.Right, null)
+            isSwipeEnabled = true
+            addSwipeListener(object : SwipeLayout.SwipeListener {
+                override fun onStartOpen(layout: SwipeLayout) {
+
+                }
+
+                override fun onOpen(layout: SwipeLayout) {
+
+                }
+
+                override fun onStartClose(layout: SwipeLayout) {
+
+                }
+
+                override fun onClose(layout: SwipeLayout) {
+
+                }
+
+                override fun onUpdate(layout: SwipeLayout, leftOffset: Int, topOffset: Int) {
+
+                }
+
+                override fun onHandRelease(layout: SwipeLayout, xvel: Float, yvel: Float) {
+
+                }
+            })
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val pizzaNameTextView = view.pizzaNameTextView
         val pizzaLayout = view.pizzaLayout
+        val bottomWrapperLayout = view.bottomWrapperLayout
+        val examItemSwipeLayout = view.examItemSwipeLayout
     }
 
     fun setListOfPizza(listOfPizza: MutableList<Pizza>) {
