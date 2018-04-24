@@ -28,6 +28,13 @@ class PizzaListActivity : Activity() {
         val ingredients = ingredientsEditText.text.toString()
         val pizzaToAdd = Pizza(pizzaName, price, ingredients)
         listOfPizza.add(pizzaToAdd)
+        clearEditTextData()
+    }
+
+    private fun clearEditTextData() {
+        pizzaNameEditText.text.clear()
+        priceEditText.text.clear()
+        ingredientsEditText.text.clear()
     }
 
     private fun createPlaceholderPizzas() {
