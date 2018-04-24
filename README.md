@@ -6,4 +6,5 @@
 Warsztaty wprowadzające w programowanie Androida w Kotlinie.
 
 Prezentacja: https://tinyurl.com/y8lhodgw
+
 RecyclerView template: https://tinyurl.com/y8a2wpk2
