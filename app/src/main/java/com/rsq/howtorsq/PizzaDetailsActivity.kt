@@ -14,7 +14,7 @@ class PizzaDetailsActivity: Activity() {
     override fun onStart() {
         super.onStart()
         val pizza = intent.getSerializableExtra("pizza")
-        if (pizza != null && pizza is Pizza) {
+        if (pizza is Pizza) {
             setupPizzaDetails(pizza)
         }
     }
