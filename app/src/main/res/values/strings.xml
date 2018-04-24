@@ -4,4 +4,5 @@
     <string name="pizza_name">pizza name</string>
     <string name="ingredients">ingredients</string>
     <string name="add">ADD</string>
+    <string name="empty_edit_text_error">text field cannot be empty</string>
 </resources>

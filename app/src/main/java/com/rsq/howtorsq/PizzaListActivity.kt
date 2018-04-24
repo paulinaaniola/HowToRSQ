@@ -3,6 +3,7 @@ package com.rsq.howtorsq
 import android.app.Activity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_pizza_list.*
 
 class PizzaListActivity : Activity() {
@@ -26,12 +27,22 @@ class PizzaListActivity : Activity() {
     }
 
     private fun addPizzaToList() {
-        val pizzaName = pizzaNameEditText.text.toString()
-        val price = priceEditText.text.toString().toInt()
-        val ingredients = ingredientsEditText.text.toString()
-        val pizzaToAdd = Pizza(pizzaName, price, ingredients)
-        listOfPizza.add(pizzaToAdd)
-        clearEditTextData()
+        if (isEditTextEmpty(pizzaNameEditText) && isEditTextEmpty(priceEditText) && isEditTextEmpty(ingredientsEditText)) {
+            val pizzaName = pizzaNameEditText.text.toString()
+            val price = priceEditText.text.toString().toInt()
+            val ingredients = ingredientsEditText.text.toString()
+            val pizzaToAdd = Pizza(pizzaName, price, ingredients)
+            pizzaAdapter?.addPizza(pizzaToAdd)
+            clearEditTextData()
+        }
+    }
+
+    private fun isEditTextEmpty(edittext: EditText): Boolean {
+        val isNotEmpty = edittext.text.toString().isNotEmpty()
+        if (!isNotEmpty) {
+            edittext.error = resources.getString(R.string.empty_edit_text_error)
+        }
+        return isNotEmpty
     }
 
     private fun clearEditTextData() {
