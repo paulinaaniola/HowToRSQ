@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.daimajia.swipe.SwipeLayout
 import kotlinx.android.synthetic.main.item_list_bottom_pizza.view.*
-import kotlinx.android.synthetic.main.item_list_top_examination.view.*
+import kotlinx.android.synthetic.main.item_list_top_pizza.view.*
 import kotlinx.android.synthetic.main.item_pizza.view.*
 
 class PizzaListAdapter : RecyclerView.Adapter<PizzaListAdapter.ViewHolder>() {
@@ -34,7 +34,7 @@ class PizzaListAdapter : RecyclerView.Adapter<PizzaListAdapter.ViewHolder>() {
             context?.startActivity(Intent(context, PizzaDetailsActivity::class.java)
                     .putExtra("pizza", pizza))
         })
-        setupSwipeDelete(holder.examItemSwipeLayout)
+        setupSwipeDelete(holder.pizzaItemSwipeLayout)
         setupBottomViewClick(holder.bottomWrapperLayout, pizza)
     }
 
@@ -87,7 +87,7 @@ class PizzaListAdapter : RecyclerView.Adapter<PizzaListAdapter.ViewHolder>() {
         val pizzaNameTextView = view.pizzaNameTextView
         val pizzaLayout = view.pizzaLayout
         val bottomWrapperLayout = view.bottomWrapperLayout
-        val examItemSwipeLayout = view.examItemSwipeLayout
+        val pizzaItemSwipeLayout = view.pizzaItemSwipeLayout
     }
 
     fun setListOfPizza(listOfPizza: MutableList<Pizza>) {

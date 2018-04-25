@@ -5,13 +5,13 @@
     android:orientation="horizontal">
 
     <com.daimajia.swipe.SwipeLayout
-        android:id="@+id/examItemSwipeLayout"
+        android:id="@+id/pizzaItemSwipeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <include layout="@layout/item_list_bottom_pizza" />
 
-        <include layout="@layout/item_list_top_examination" />
+        <include layout="@layout/item_list_top_pizza" />
 
     </com.daimajia.swipe.SwipeLayout>
 
